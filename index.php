@@ -1,6 +1,6 @@
 <?php
 2
-	$link = mysql_connect('vinpearl-mysqldbserver.mysql.database.azure.com', 'mysqldbuser@vinpearl-mysqldbserver', '1q2w3e4r!@#');
+	$link = mysql_connect('chinhmysql01.mysql.database.azure.com', 'mysqladmin@chinhmysql01', 'abc@12345');
 3
 	if (!$link) {
 4
