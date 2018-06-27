@@ -1,15 +1,19 @@
 <?php
 2
-	$link = mysql_connect('chinhmysql01.mysql.database.azure.com', 'mysqladmin@chinhmysql01', 'abc@12345');
-3
-	if (!$link) {
-4
-	die('Could not connect: ' . mysql_error());
-5
+	$host = 'chinhmysql01.mysql.database.azure.com';
+	$username = 'mysqladmin@chinhmysql01';
+	$password = 'abc@12345';
+	//$db_name = 'your_database';
+
+	//Establishes the connection
+	$conn = mysqli_init();
+	mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
+	if (mysqli_connect_errno($conn)) {
+	die('Failed to connect to MySQL: '.mysqli_connect_error());
 	}
 6
 	echo 'Connected successfully';
 7
-	mysql_close($link);
+	mysqli_close($conn);
 8
 	?>
